@@ -1,0 +1,27 @@
+package com.sutherland.services;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.sutherland.beans.Employee;
+
+@Service
+public class EmployeeService {
+
+	static List<Employee> empList;
+	static {
+		empList = Arrays.asList(new Employee(302, "rectjs" , 700),
+				new Employee(101, "rectjs" , 700),
+				new Employee(102, "rectjs" , 700),
+				new Employee(302, "rectjs" , 700),
+				new Employee(302, "rectjs" , 700)
+				);
+		
+	}
+	
+	public List<Employee> getEmployeeList(){
+		return empList;
+	}
+}

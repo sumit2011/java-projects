@@ -1,0 +1,12 @@
+package com.sutherland.aadhardetail.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sutherland.aadhardetail.entity.AadharDetail;
+
+public interface AadharDetailRepo extends JpaRepository<AadharDetail, String> {
+
+}
+
+
+

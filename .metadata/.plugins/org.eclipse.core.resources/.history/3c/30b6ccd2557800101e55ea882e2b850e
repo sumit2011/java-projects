@@ -1,0 +1,12 @@
+package com.sutherland.loan.service;
+
+import java.util.List;
+
+import com.sutherland.loan.entity.LoanDetails;
+
+public interface LoanDetailsService {
+	int applyLoan(LoanDetails details);
+	List <LoanDetails> findAll();
+	LoanDetails checkLoanStatus(int loanId);
+	String verifyLoan(int loanId);
+}

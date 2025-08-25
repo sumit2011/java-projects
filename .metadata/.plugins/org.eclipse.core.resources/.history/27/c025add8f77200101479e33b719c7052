@@ -1,0 +1,49 @@
+package com.suther.employee.main;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.suther.employee.beans.Employee;
+import com.suther.employee.dao.EmployeeDao;
+import com.suther.employee.dao.EmployeeDaoImpl;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+		System.out.println("--------------------------------------------------------");
+		System.out.println("What you want to do choose the option ?");
+		System.out.println("1. Add a Employee");
+		System.out.println("2. update a Employee");
+		System.out.println("3. delete a Employee");
+		System.out.println("4. show the table");
+		System.out.print("Enter option: ");
+		int op = sc.nextInt();
+		sc.nextLine();
+		
+		if(op == 1) {
+			AddEmployee.AddEmployee();
+		}
+		else if(op == 2) {
+			UpdateEmployee.UpdateEmployee();
+		}
+		else if(op == 3) {
+			deleteEmployee();
+		}else if(op == 4) {
+			GetEmployeeList.GetEmployeeList();
+		}
+		else {
+			System.out.println("Invalid Inputs!");
+		}
+	}}
+
+
+	private static void deleteEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

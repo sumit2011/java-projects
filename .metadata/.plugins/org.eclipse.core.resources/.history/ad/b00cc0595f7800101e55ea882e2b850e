@@ -1,0 +1,15 @@
+package com.sutherland.loan.repo;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.sutherland.loan.dto.AadharDetail;
+
+@FeignClient
+public interface AadharDetailServiceProxy {
+	@GetMapping(value = "/aadhardetail/byaadharno/{aadharno}")
+	AadharDetail getAadharDetail(@PathVariable int aadharno);
+
+}
+

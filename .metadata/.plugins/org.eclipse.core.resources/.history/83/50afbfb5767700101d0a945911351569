@@ -1,0 +1,5 @@
+package com.sutherland.loanservice.entity;
+
+public class LoanService {
+
+}

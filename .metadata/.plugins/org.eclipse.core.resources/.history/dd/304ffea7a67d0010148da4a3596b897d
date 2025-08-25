@@ -1,0 +1,35 @@
+package com.sutherland.library.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.library.entity.User;
+import com.sutherland.library.repo.LoginRepo;
+
+@Service
+public class LoginServiceImpl {
+
+	@Autowired
+    private LoginRepo userRepository;
+
+
+    public boolean authenticate(String username, String password) {
+        User user = userRepository.findByUsername(username);
+        if (user != null && (password == user.getPassWord())) {
+            return true;
+        }
+        return false;
+    }
+
+    public void createUser(String username, String password) {
+        User user = new User();
+        user.setUserName("sumit");
+        user.setPassWord(("password"));
+        user.setRole("admin");
+        userRepository.save(user);
+    }
+	
+}
+
+
+
+

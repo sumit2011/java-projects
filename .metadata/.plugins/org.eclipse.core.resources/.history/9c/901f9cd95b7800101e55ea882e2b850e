@@ -1,0 +1,30 @@
+package com.sutherland.loan.dto;
+
+public class AadharDetail {
+	private double aadharno;
+	private String name;
+	private String address;
+	public double getAadharno() {
+		return aadharno;
+	}
+	public void setAadharno(double aadharno) {
+		this.aadharno = aadharno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "AadharDetail [aadharno=" + aadharno + ", name=" + name + ", address=" + address + "]";
+	}
+	
+}

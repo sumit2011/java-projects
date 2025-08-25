@@ -1,0 +1,19 @@
+CREATE TABLE loan_detail (
+    loanId INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(40) NOT NULL,
+    mobile VARCHAR(10) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    monthlyIncome DECIMAL(10, 2) NOT NULL,
+    loanAmount DECIMAL(15, 2) NOT NULL,
+    pancard VARCHAR(10) NOT NULL,
+    creditScore DECIMAL(5, 2) NOT NULL,
+    applicationDate DATE DEFAULT CURRENT_DATE,
+    loanStatus varchar(15)
+);
+
+INSERT INTO loan_detail (
+    name, mobile, email, monthlyIncome, loanAmount,
+    pancard, creditScore
+) VALUES
+('sumit Sharma', '9876543210', 'amit.sharma@example.com', 55000.00, 300000.00, 'ABCDE1234F', 750.00),
+('Priya Mehta', '9123456789', 'priya.mehta@example.com', 72000.00, 500000.00, 'PQRSX5678K', 810.00);

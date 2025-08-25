@@ -1,0 +1,12 @@
+package com.sutherland.aadhardetail.service;
+
+import java.util.List;
+
+import com.sutherland.aadhardetail.entity.AadharDetail;
+
+public interface AadharDetailService {
+	void addDetails(AadharDetail detail);
+	List<AadharDetail> getAll();
+	AadharDetail getAadharDetailByAadharNo(int aadhar);
+	
+}

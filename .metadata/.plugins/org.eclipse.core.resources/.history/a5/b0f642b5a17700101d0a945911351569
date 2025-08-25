@@ -1,0 +1,12 @@
+CREATE TABLE loan_detail (
+    loanId INT PRIMARY KEY,
+    name VARCHAR(40),
+    mobile VARCHAR(10),
+    email VARCHAR(50),
+    monthlyIncome DECIMAL(10, 2),
+    loanAmount DECIMAL(15, 2),
+    pancard VARCHAR(10),
+    creditScore DECIMAL(5, 2),
+    applicationDate DATE
+);
+

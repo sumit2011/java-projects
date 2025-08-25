@@ -1,0 +1,5 @@
+package com.sutherland.aadhardetail.entity;
+
+public class AadharDetail {
+
+}

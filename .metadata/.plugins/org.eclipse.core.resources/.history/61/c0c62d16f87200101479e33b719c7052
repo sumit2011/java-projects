@@ -1,0 +1,18 @@
+package com.suther.employee.main;
+
+import com.suther.employee.beans.Employee;
+import com.suther.employee.dao.EmployeeDao;
+import com.suther.employee.dao.EmployeeDaoImpl;
+
+public class DeleteEmployee {
+	public static void DeleteEmployee() {
+		
+		int id = 56;
+		EmployeeDao dao = new EmployeeDaoImpl();
+		int rows = dao.deleteEmployee(id);
+		if(rows>0)
+			System.out.println("deleted");
+		else
+			System.out.println("not deleted");  
+	}
+}

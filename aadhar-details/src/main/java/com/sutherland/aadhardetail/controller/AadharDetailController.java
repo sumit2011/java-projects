@@ -1,0 +1,46 @@
+package com.sutherland.aadhardetail.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sutherland.aadhardetail.entity.AadharDetail;
+import com.sutherland.aadhardetail.service.AadharDetailService;
+
+@RestController
+@RequestMapping("/aadhardetail")
+public class AadharDetailController {
+	
+	@Autowired
+	AadharDetailService service;
+	
+	@PostMapping
+	public ResponseEntity<String> addDetails(@RequestBody AadharDetail detail){
+		service.addDetails(detail);
+		return new ResponseEntity<String>("inserted",HttpStatus.OK);
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<AadharDetail>> getAll(){
+		List<AadharDetail> list= service.getAll();
+		return new ResponseEntity<List<AadharDetail>>(list,HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/byaadharno/{aadharno}")
+	public ResponseEntity<AadharDetail> getAadharDetailByAadharNo(@PathVariable int aadharno){
+		AadharDetail detail = service.getAadharDetailByAadharNo(aadharno);
+		return new ResponseEntity<AadharDetail>(detail,HttpStatus.OK);
+	}
+	
+
+}

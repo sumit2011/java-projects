@@ -1,0 +1,137 @@
+package com.sutherland.loanservice.entity;
+
+import jakarta.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+public class LoanService {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int loanId;
+
+    @Column
+    private String name;
+
+    @Column
+    private int mobile;
+
+    @Column
+    private String email;
+
+    @Column
+    private double monthlyIncome;
+
+    @Column
+    private double loanAmmount;
+
+    @Column
+    private String pancard;
+
+    @Column
+    private double creditScore;
+
+    @Column
+    private LocalDate applicationDate; 
+    @Column
+    private String loanStatus;
+    
+    
+    public String getLoanStatus() {
+		return loanStatus;
+	}
+
+	public void setLoanStatus(String loanStatus) {
+		this.loanStatus = loanStatus;
+	}
+
+	public LoanService() {
+        this.applicationDate = LocalDate.now(); 
+    }
+
+    public LoanService(String name, int mobile, String email, double monthlyIncome, double loanAmmount,
+                       String pancard, double creditScore, String loanStatus) {
+        this.name = name;
+        this.mobile = mobile;
+        this.email = email;
+        this.monthlyIncome = monthlyIncome;
+        this.loanAmmount = loanAmmount;
+        this.pancard = pancard;
+        this.creditScore = creditScore;
+        this.applicationDate = LocalDate.now(); 
+        this.loanStatus = loanStatus;
+    }
+
+    // Getters and setters
+    public int getLoanId() {
+        return loanId;
+    }
+
+    public void setLoanId(int loanId) {
+        this.loanId = loanId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(int mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public double getMonthlyIncome() {
+        return monthlyIncome;
+    }
+
+    public void setMonthlyIncome(double monthlyIncome) {
+        this.monthlyIncome = monthlyIncome;
+    }
+
+    public double getLoanAmmount() {
+        return loanAmmount;
+    }
+
+    public void setLoanAmmount(double loanAmmount) {
+        this.loanAmmount = loanAmmount;
+    }
+
+    public String getPancard() {
+        return pancard;
+    }
+
+    public void setPancard(String pancard) {
+        this.pancard = pancard;
+    }
+
+    public double getCreditScore() {
+        return creditScore;
+    }
+
+    public void setCreditScore(double creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public LocalDate getApplicationDate() {
+        return applicationDate;
+    }
+
+    public void setApplicationDate(LocalDate applicationDate) {
+        this.applicationDate = applicationDate;
+    }
+}

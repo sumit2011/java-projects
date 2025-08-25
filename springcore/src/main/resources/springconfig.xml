@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    
+    <bean id="std" class="main.Student"> 
+    
+      
+    <constructor-arg name="regNo"  value="1234"></constructor-arg>
+    <constructor-arg name="stdName"  value="sutherland"></constructor-arg> 
+    <!--
+    <property name="regNo" value="1234"></property>
+    <property name="stdName" value="sumit"></property>
+    -->
+    
+    </bean> 
+    
+    <bean id="emp" class="main.Employee" >
+    
+    	<property name="code" value="1234"></property>
+    <property name="empname" value="sumit"></property>
+    <property name="salary" value="8000"></property>
+    <property name="addr" ref="address"></property>
+    
+    </bean>
+    <bean id="address" class="main.Address">
+     <property name="strtno" value="40"></property>
+    <property name="state" value="telengana"></property>
+    </bean>
+</beans>

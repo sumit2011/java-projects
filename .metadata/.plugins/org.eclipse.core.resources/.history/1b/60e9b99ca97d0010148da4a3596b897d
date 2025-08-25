@@ -1,0 +1,10 @@
+package com.sutherland.library.service;
+
+import com.sutherland.library.entity.Login;
+
+public interface LoginService {
+
+	void addUser(Login user);
+	Login validateUser(String  userName , String password);
+	
+}

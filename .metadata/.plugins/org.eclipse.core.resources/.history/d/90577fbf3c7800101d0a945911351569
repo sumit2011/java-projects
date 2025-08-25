@@ -1,0 +1,5 @@
+create table credit_score(aadharno int primary key, 
+    name varchar(40), address varchar(20));
+    
+insert into credit_score(pancard,name,score) 
+values(12345,'James Gosling','hydrabad telengana');

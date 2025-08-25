@@ -1,0 +1,11 @@
+package com.sutherland.library.exceptions;
+
+public class BookNotPresentException extends RuntimeException {
+	
+	public BookNotPresentExceptiokn(String msg) {
+		super(msg);
+	}
+}
+
+
+

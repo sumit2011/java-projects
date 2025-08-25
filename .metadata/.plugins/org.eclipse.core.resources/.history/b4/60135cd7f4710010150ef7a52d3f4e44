@@ -1,0 +1,36 @@
+package javaProject;
+import java.util.Scanner;
+
+public class CheckDaysInMonth {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a valid month: ");
+		
+		String inputMonth = sc.nextLine();
+		
+		try {
+			Months month = Months.valueOf(inputMonth.toLowerCase());
+			switch(inputMonth) {
+			case "january" -> System.out.println("31 days");
+			case "february" -> System.out.println("28 days");
+			case "march" -> System.out.println("30 days");
+			case "april" -> System.out.println("31 days");
+			default-> throw new InvalidMonthException();
+			};
+//			int days = month.getDays();
+//			System.out.println(days);
+			System.out.println("Program successfully executed!");
+			
+//			throw new InvalidMonthException();
+				
+		}catch(InvalidMonthException e) {
+            System.out.println("Exception: " + e.getMessage());
+		}
+		
+		
+	}
+
+}

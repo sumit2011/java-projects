@@ -1,0 +1,6 @@
+package com.sutherland.library.repo;
+
+public class BookRepository {
+	
+
+}

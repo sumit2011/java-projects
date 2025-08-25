@@ -1,0 +1,42 @@
+package com.sutherland.library.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.library.repo.LoginRepo;
+
+@Service
+public class LoginServiceImpl {
+
+	@Autowired
+    private LoginRepo userRepository;
+
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    // Authenticate user
+    public boolean authenticate(String username, String password) {
+        User user = userRepository.findByUsername(username);
+        if (user != null && passwordEncoder.matches(password, user.getPassword())) {
+            return true;
+        }
+        return false;
+    }
+
+    // Create user for testing (you would hash the password in a real system)
+    public void createUser(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
+    }
+	
+}
+
+
+
+
+@Service
+public class UserService {
+
+    
+}

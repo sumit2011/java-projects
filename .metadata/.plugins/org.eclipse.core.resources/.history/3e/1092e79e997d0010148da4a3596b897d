@@ -1,0 +1,8 @@
+package com.sutherland.library.entity;
+
+
+
+@Entity
+public class Login {
+	
+}

@@ -1,0 +1,15 @@
+package com.sutherland.loanservice.entity;
+
+public class LoanService {
+	private int loanId;
+	private String name;
+	private int mobile;
+	private String email;
+	private double monthlyIncome;
+	private double loanAmmount;
+	private String pancard;
+	private double creditScore;
+
+}
+
+

@@ -1,0 +1,7 @@
+create table credit_score(pancard varchar(10) primary key, 
+    name varchar(40), score int);
+    
+insert into credit_score(pancard,name,score) 
+values('ABCD12345','James Gosling',500);
+insert into credit_score(pancard,name,score) 
+values('BLUP12356','Dennis Ritchie',750);

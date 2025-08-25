@@ -1,0 +1,26 @@
+package javaProject;
+
+public enum Months {
+	january(31),
+	february,
+	march,
+	april,
+	may,
+	june,
+	july,
+	august,
+	september,
+	october,
+	november,
+	december;
+	
+	private int days;
+
+	public int getDays() {
+		return days;
+	}
+
+	public void setDays(int days) {
+		this.days = days;
+	}
+}

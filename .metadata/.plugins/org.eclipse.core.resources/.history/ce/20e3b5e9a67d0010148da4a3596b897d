@@ -1,0 +1,11 @@
+package com.sutherland.library.service;
+
+import com.sutherland.library.entity.Login;
+import com.sutherland.library.entity.User;
+
+public interface LoginService {
+
+	boolean validateUser(Login user);
+	
+	
+}

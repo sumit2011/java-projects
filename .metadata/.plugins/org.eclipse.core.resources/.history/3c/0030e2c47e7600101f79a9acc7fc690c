@@ -1,0 +1,20 @@
+package com.sutherland;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.sutherland.controller.SampleController;
+
+@SpringBootApplication
+public class SpringBootMain {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootMain.class, args);
+		System.out.println("welcome to sutherland!");
+		System.out.println("Hii sumit!");
+		
+		SampleController cnt = new SampleController();
+		System.out.println(cnt);
+
+	}
+}

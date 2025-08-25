@@ -1,0 +1,92 @@
+package com.sutherland.loanservice.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class LoanService {
+	@Id
+	private int loanId;
+	@Column
+	private String name;
+	@Column
+	private int mobile;
+	@Column
+	private String email;
+	@Column
+	private double monthlyIncome;
+	@Column
+	private double loanAmmount;
+	@Column
+	private String pancard;
+	@Column
+	private double creditScore;
+	
+	
+	public LoanService(int loanId, String name, int mobile, String email, double monthlyIncome, double loanAmmount,
+			String pancard, double creditScore) {
+		super();
+		this.loanId = loanId;
+		this.name = name;
+		this.mobile = mobile;
+		this.email = email;
+		this.monthlyIncome = monthlyIncome;
+		this.loanAmmount = loanAmmount;
+		this.pancard = pancard;
+		this.creditScore = creditScore;
+	}
+	public int getLoanId() {
+		return loanId;
+	}
+	public void setLoanId(int loanId) {
+		this.loanId = loanId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getMobile() {
+		return mobile;
+	}
+	public void setMobile(int mobile) {
+		this.mobile = mobile;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public double getMonthlyIncome() {
+		return monthlyIncome;
+	}
+	public void setMonthlyIncome(double monthlyIncome) {
+		this.monthlyIncome = monthlyIncome;
+	}
+	public double getLoanAmmount() {
+		return loanAmmount;
+	}
+	public void setLoanAmmount(double loanAmmount) {
+		this.loanAmmount = loanAmmount;
+	}
+	public String getPancard() {
+		return pancard;
+	}
+	public void setPancard(String pancard) {
+		this.pancard = pancard;
+	}
+	public double getCreditScore() {
+		return creditScore;
+	}
+	public void setCreditScore(double creditScore) {
+		this.creditScore = creditScore;
+	}
+	
+	
+
+}
+
+

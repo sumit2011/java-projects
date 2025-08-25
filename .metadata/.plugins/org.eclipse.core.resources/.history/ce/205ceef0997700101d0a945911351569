@@ -1,0 +1,37 @@
+package com.sutherland.loanservice.service;
+
+import com.sutherland.loanservice.entity.LoanService;
+import com.sutherland.loanservice.repo.LoanServiceRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class LoanServiceServiceImpl implements LoanServiceService {
+
+    @Autowired
+    LoanServiceRepo loanServiceRepository;
+
+    @Override
+    public LoanService createLoan(LoanService loanService) {
+        if (loanService.getApplicationDate() == null) {
+            loanService.setApplicationDate(java.time.LocalDate.now());
+        }
+        return loanServiceRepository.save(loanService);
+    }
+
+    @Override
+    public List<LoanService> getAllLoans() {
+        return loanServiceRepository.findAll();
+    }
+
+    @Override
+    public Optional<LoanService> getLoanById(int loanId) {
+        return loanServiceRepository.findById(loanId);
+    }
+
+
+
+}

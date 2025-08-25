@@ -1,0 +1,7 @@
+create table loan_detail(loanId int(5) primary key, 
+    name varchar(40), mobile int(10), email varchar(20),
+    monthlyIncome double(5),loanAmmount double(10) , pancard varchar(10), 
+    creditScore double(10) , applicationDate date);
+    
+--insert into loan_detail(loanId,name,mobile,) 
+--values('ABCD12345','James Gosling',500);

@@ -1,0 +1,56 @@
+package com.sutherland.loanservice.service;
+
+import com.sutherland.loanservice.entity.LoanService;
+import com.sutherland.loanservice.repo.LoanServiceRepo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class LoanServiceServiceImpl implements LoanServiceService {
+
+    @Autowired
+    private LoanServiceRepo loanServiceRepository;
+
+    @Override
+    public LoanService createLoan(LoanService loanService) {
+        return loanServiceRepository.save(loanService);
+    }
+
+    @Override
+    public List<LoanService> getAllLoans() {
+        return loanServiceRepository.findAll();
+    }
+
+    @Override
+    public Optional<LoanService> getLoanById(int loanId) {
+        return loanServiceRepository.findById(loanId);
+    }
+
+    @Override
+    public LoanService updateLoan(int loanId, LoanService updatedLoan) {
+        return loanServiceRepository.findById(loanId)
+                .map(existingLoan -> {
+                    existingLoan.setName(updatedLoan.getName());
+                    existingLoan.setMobile(updatedLoan.getMobile());
+                    existingLoan.setEmail(updatedLoan.getEmail());
+                    existingLoan.setMonthlyIncome(updatedLoan.getMonthlyIncome());
+                    existingLoan.setLoanAmmount(updatedLoan.getLoanAmmount());
+                    existingLoan.setPancard(updatedLoan.getPancard());
+                    existingLoan.setCreditScore(updatedLoan.getCreditScore());
+                    return loanServiceRepository.save(existingLoan);
+                })
+                .orElseGet(() -> {
+                    updatedLoan.setLoanId(loanId);
+                    return loanServiceRepository.save(updatedLoan);
+                });
+    }
+
+    @Override
+    public void deleteLoan(int loanId) {
+        loanServiceRepository.deleteById(loanId);
+    }
+}

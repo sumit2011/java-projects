@@ -1,0 +1,38 @@
+package com.sutherland.aadhardetail.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.aadhardetail.entity.AadharDetail;
+import com.sutherland.aadhardetail.repo.AadharDetailRepo;
+
+@Service
+public class AadharDetailServiceImpl implements AadharDetailService {
+
+	@Autowired
+	AadharDetailRepo repo;
+	
+	@Override
+	public void addDetails(AadharDetail detail) {
+		// TODO Auto-generated method stub
+		repo.save(detail);
+		
+	}
+
+	@Override
+	public List<AadharDetail> getAll() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
+	@Override
+	public AadharDetail getAadharDetailByAadharNo(double aadharno) {
+		// TODO Auto-generated method stub
+		Optional<AadharDetail> detail = repo.findById(aadharno);
+		return null;
+	}
+
+}

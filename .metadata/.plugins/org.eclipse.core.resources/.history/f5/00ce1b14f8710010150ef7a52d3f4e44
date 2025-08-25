@@ -1,0 +1,41 @@
+package javaProject;
+import java.util.Scanner;
+
+public class CheckDaysInMonth extends Exception {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a valid month: ");
+		
+		String inputMonth = sc.nextLine();
+		
+		try {
+			Months month = Months.valueOf(inputMonth.toLowerCase());
+			switch(month) {
+			case january -> System.out.println("No of days: 31 days");
+			case february -> System.out.println("No of days: 28 days");
+			case march -> System.out.println("No of days: 30 days");
+			case april -> System.out.println("No of days: 31 days");
+			case may -> System.out.println("No of days: 31 days");
+			case june -> System.out.println("No of days: 28 days");
+			case july -> System.out.println("No of days: 30 days");
+			case august -> System.out.println("No of days: 31 days");
+			case september -> System.out.println("No of days: 31 days");
+			case october -> System.out.println("No of days: 28 days");
+			case november -> System.out.println("No of days: 30 days");
+			case december -> System.out.println("No of days: 31 days");
+			default-> throw new InvalidMonthException();
+			};
+
+			System.out.println("Program successfully executed!");
+							
+		}catch(InvalidMonthException e) {
+            System.out.println("Exception: " + e.getMessage());
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.sutherland.library.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.library.entity.Login;
+import com.sutherland.library.entity.User;
+import com.sutherland.library.repo.LoginRepo;
+
+@Service
+public class LoginServiceImpl {
+
+	@Autowired
+    private LoginRepo userRepo;
+
+//	@Override
+//	public void addUser(Login user) {
+//		userRepo.save(user);
+//	}
+//
+//	@Override
+//	public Login validateUser(String username , String password) {
+//		return userRepo.findByUsername(username, password);
+//	}
+    
+	
+}
+
+
+
+

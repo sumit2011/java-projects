@@ -1,0 +1,14 @@
+package com.sutherland.loanservice.service;
+
+import java.util.List;
+
+import com.sutherland.loanservice.entity.LoanService;
+
+public interface LoanServiceService {
+
+	void addDetails(LoanService score);
+	List<LoanService> getAll();
+	LoanService getLoanServiceByLoanId(int id);
+}
+
+

@@ -1,0 +1,21 @@
+package main;
+
+public class Address {
+
+	private String strtno;
+	private String state;
+	
+	public String getStrtno() {
+		return strtno;
+	}
+	public void setStrtno(String strtno) {
+		this.strtno = strtno;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+}

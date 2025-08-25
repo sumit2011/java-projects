@@ -1,0 +1,10 @@
+package com.sutherland.loanservice.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sutherland.loanservice.entity.LoanService;
+
+
+public interface LoanServiceRepo extends JpaRepository<LoanService, String> {
+
+}
